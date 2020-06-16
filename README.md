@@ -1,5 +1,5 @@
-# :card_file_box: GoBarberWeb
-Repository of the code made in CodingItWrongLive about TDD and it application with ReactJS. The code was made by me.
+# :card_file_box: React with TDD
+Repository of the code made in CodingItWrongLive about TDD and it application with ReactJS. All the code was made by me.
 
 <!--
 <p align= "center">
@@ -7,7 +7,7 @@ Repository of the code made in CodingItWrongLive about TDD and it application wi
 <p/>
 -->
 
-## :bookmark_tabs: Technologies Made
+## :bookmark_tabs: Technologies Used
 * HTML
 * CSS
 * Javascript
@@ -25,4 +25,12 @@ Clone the repository or download the code and open in terminal the main diretory
 
 ### yarn start
 
-Caso não abra sozinho, vá para http://localhost:1234/ no seu navegador de preferência!
+After this, go to http://localhost:1234/ in your main brownser and its open!
+
+To run the tests, you can use:
+
+For unit tests:
+## yarn unit
+
+For end-to-end tests:
+## yarn e2e
