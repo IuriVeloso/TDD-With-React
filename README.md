@@ -1,5 +1,5 @@
 # :card_file_box: React with TDD
-Repository of the code made in CodingItWrongLive about TDD and it application with ReactJS (You can check it [here] (https://www.youtube.com/watch?v=0aAdglT39go&list=PLXXnezSEtvNMlfJFd1Z2wilxymcOaVl9Q) ). All the code was made by me.
+Repository of the code made in CodingItWrongLive about TDD and it application with ReactJS (You can check it [here](https://www.youtube.com/watch?v=0aAdglT39go&list=PLXXnezSEtvNMlfJFd1Z2wilxymcOaVl9Q) ). All the code was made by me.
 
 <!--
 <p align= "center">
