@@ -28473,14 +28473,22 @@ var RestaurantListPage = /*#__PURE__*/function (_Component) {
     _this = _super.call.apply(_super, [this].concat(args));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      restaurantNames: []
+      restaurantNames: [],
+      showNewRestaurantForm: false
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleAddRestaurant", function (newRestaurant) {
       _this.setState(function (state) {
         return {
+          showNewRestaurantForm: false,
           restaurantNames: [newRestaurant].concat(_toConsumableArray(state.restaurantNames))
         };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleShowNewRestaurant", function () {
+      _this.setState({
+        showNewRestaurantForm: true
       });
     });
 
@@ -28490,11 +28498,14 @@ var RestaurantListPage = /*#__PURE__*/function (_Component) {
   _createClass(RestaurantListPage, [{
     key: "render",
     value: function render() {
-      var restaurantNames = this.state.restaurantNames;
+      var _this$state = this.state,
+          restaurantNames = _this$state.restaurantNames,
+          showNewRestaurantForm = _this$state.showNewRestaurantForm;
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
         "data-test": "addRestaurantButton",
-        type: "button"
-      }, "Add Restaurant"), /*#__PURE__*/_react.default.createElement(_NewRestaurantForm.default, {
+        type: "button",
+        onClick: this.handleShowNewRestaurant
+      }, "Add Restaurant"), showNewRestaurantForm && /*#__PURE__*/_react.default.createElement(_NewRestaurantForm.default, {
         onSave: this.handleAddRestaurant
       }), /*#__PURE__*/_react.default.createElement(_RestaurantList.default, {
         restaurants: restaurantNames
