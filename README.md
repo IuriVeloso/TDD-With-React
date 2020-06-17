@@ -30,7 +30,7 @@ After this, go to http://localhost:1234/ in your main brownser and its open!
 To run the tests, you can use:
 
 For unit tests:
-## yarn unit
+### yarn unit
 
 For end-to-end tests:
-## yarn e2e
+### yarn e2e
