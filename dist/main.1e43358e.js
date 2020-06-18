@@ -39066,18 +39066,36 @@ var _reactMaterialize = require("react-materialize");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function RestaurantList(_ref) {
-  var restaurants = _ref.restaurants;
-  return /*#__PURE__*/_react.default.createElement(_reactMaterialize.Collection, {
-    header: "Restaurants"
-  }, restaurants.length === 0 && /*#__PURE__*/_react.default.createElement(_reactMaterialize.CollectionItem, {
+var EmptyRestaurantItens = function EmptyRestaurantItens() {
+  return /*#__PURE__*/_react.default.createElement(_reactMaterialize.CollectionItem, {
     style: {
       color: 'gray'
     }
-  }, " Click the button to add your first restaurant"), restaurants.map(function (restaurantName) {
+  }, " Click the button to add your first restaurant");
+};
+
+var SomeRestaurantItems = function SomeRestaurantItems(_ref) {
+  var restaurants = _ref.restaurants;
+  return restaurants.map(function (restaurantName) {
     return /*#__PURE__*/_react.default.createElement(_reactMaterialize.CollectionItem, {
       key: restaurantName
     }, restaurantName);
+  });
+};
+
+var RestaurantItems = function RestaurantItems(_ref2) {
+  var restaurantItens = _ref2.restaurantItens;
+  return restaurantItens.length === 0 ? /*#__PURE__*/_react.default.createElement(EmptyRestaurantItens, null) : /*#__PURE__*/_react.default.createElement(SomeRestaurantItems, {
+    restaurants: restaurantItens
+  });
+};
+
+function RestaurantList(_ref3) {
+  var restaurants = _ref3.restaurants;
+  return /*#__PURE__*/_react.default.createElement(_reactMaterialize.Collection, {
+    header: "Restaurants"
+  }, /*#__PURE__*/_react.default.createElement(RestaurantItems, {
+    restaurantItens: restaurants
   }));
 }
 },{"react":"node_modules/react/index.js","react-materialize":"node_modules/react-materialize/lib/index.js"}],"src/RestaurantListPage.js":[function(require,module,exports) {
@@ -39174,22 +39192,26 @@ var RestaurantListPage = /*#__PURE__*/function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "renderNewRestauranteForm", function () {
+      if (_this.state.showNewRestaurantForm) {
+        return /*#__PURE__*/_react.default.createElement(_NewRestaurantForm.default, {
+          onSave: _this.handleAddRestaurant
+        });
+      }
+    });
+
     return _this;
   }
 
   _createClass(RestaurantListPage, [{
     key: "render",
     value: function render() {
-      var _this$state = this.state,
-          restaurantNames = _this$state.restaurantNames,
-          showNewRestaurantForm = _this$state.showNewRestaurantForm;
+      var restaurantNames = this.state.restaurantNames;
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactMaterialize.Row, null, /*#__PURE__*/_react.default.createElement(_reactMaterialize.Button, {
         "data-test": "addRestaurantButton",
         type: "button",
         onClick: this.handleShowNewRestaurant
-      }, "Add Restaurant")), /*#__PURE__*/_react.default.createElement(_reactMaterialize.Row, null, showNewRestaurantForm && /*#__PURE__*/_react.default.createElement(_NewRestaurantForm.default, {
-        onSave: this.handleAddRestaurant
-      })), /*#__PURE__*/_react.default.createElement(_reactMaterialize.Row, null, /*#__PURE__*/_react.default.createElement(_RestaurantList.default, {
+      }, "Add Restaurant")), /*#__PURE__*/_react.default.createElement(_reactMaterialize.Row, null, this.renderNewRestauranteForm()), /*#__PURE__*/_react.default.createElement(_reactMaterialize.Row, null, /*#__PURE__*/_react.default.createElement(_RestaurantList.default, {
         restaurants: restaurantNames
       })));
     }
@@ -39255,12 +39277,12 @@ var App = /*#__PURE__*/function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactMaterialize.Row, null, /*#__PURE__*/_react.default.createElement(_reactMaterialize.Col, {
+      return /*#__PURE__*/_react.default.createElement(_reactMaterialize.Row, null, /*#__PURE__*/_react.default.createElement(_reactMaterialize.Col, {
         s: 12,
         m: 10,
         l: 8,
         offset: 'm1 l2'
-      }, /*#__PURE__*/_react.default.createElement(_RestaurantListPage.default, null))));
+      }, /*#__PURE__*/_react.default.createElement(_RestaurantListPage.default, null)));
     }
   }]);
 
@@ -39310,7 +39332,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42679" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45471" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
