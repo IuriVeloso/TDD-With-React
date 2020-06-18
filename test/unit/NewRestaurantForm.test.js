@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import NewRestaurantForm from '../../src/NewRestaurantForm.js';
+import "../../node_modules/materialize-css/dist/js/materialize.min.js";
 
 describe("NewRestaurantForm", () => {
     describe('clicking the save button', () => {
@@ -8,10 +9,10 @@ describe("NewRestaurantForm", () => {
             const saveHandler = jest.fn();
             const wrapper = mount(<NewRestaurantForm onSave={saveHandler}/>);
 
-            wrapper.find('[data-test="newRestaurantName"]')
+            wrapper.find('input[data-test="newRestaurantName"]')
                 .simulate('change', { target: { value: 'Sushi Place' } });
 
-            wrapper.find('[data-test="saveNewRestaurantButton"]')
+            wrapper.find('button[data-test="saveNewRestaurantButton"]')
                 .simulate('click');
 
             expect(saveHandler).toHaveBeenCalledWith('Sushi Place');

@@ -1,11 +1,12 @@
 import React from 'react';
+import { Collection, CollectionItem } from 'react-materialize';
 
 export default function RestaurantList({ restaurants }) {
     return (
-        <ul>
+        <Collection>
             {restaurants.map(restaurantName => (
-                <li key={restaurantName}>{restaurantName}</li>
+                <CollectionItem key={restaurantName}>{restaurantName}</CollectionItem>
             ))}
-        </ul>
+        </Collection>
     );
 }

@@ -5408,6 +5408,11 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+material@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/material/-/material-0.4.3.tgz#312d087fadf08210bd79dd3c36d0e0d51384d82d"
+  integrity sha512-uZM0D1V6rNNuiKsKKEY+Tf+2i+9FDcl1+eW10Wlta34ILPW3IiLqEZTLNHzq7bVkQFQBMvG8rLl0gmdmwyknkw==
+
 materialize-css@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/materialize-css/-/materialize-css-1.0.0.tgz#8d5db1c4a81c6d65f3b2e2ca83a8e08daa24d1be"
@@ -6825,6 +6830,11 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.6, react-is@^16.9.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-material@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/react-material/-/react-material-0.3.2.tgz#77cc0664c2f4790df0285f349c0e1b0b678b1497"
+  integrity sha1-d8wGZML0eQ3wKF80nA4bC2eLFJc=
 
 react-materialize@^3.9.2:
   version "3.9.2"

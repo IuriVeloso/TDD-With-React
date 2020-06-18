@@ -25,9 +25,11 @@
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
+    "material": "^0.4.3",
     "materialize-css": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-material": "^0.3.2",
     "react-materialize": "^3.9.2"
   },
   "jest": {
