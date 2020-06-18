@@ -21,5 +21,4 @@ jobs:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - ~/.cache  ## cache both yarn and Cypress!
-      - run: yarn start && wait-on http://localhost:1234
-      - run: $(npm bin)/cypress run
+      - run: yarn start && wait-on http://localhost:1234 && $(yarn bin)/cypress run
