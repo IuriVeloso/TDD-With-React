@@ -25,8 +25,10 @@
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
+    "materialize-css": "^1.0.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-materialize": "^3.9.2"
   },
   "jest": {
     "setupFilesAfterEnv": [
