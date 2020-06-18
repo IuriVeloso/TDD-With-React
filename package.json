@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "material": "^0.4.3",
-    "materialize-css": "^1.0.0",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-material": "^0.3.2",
