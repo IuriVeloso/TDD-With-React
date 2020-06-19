@@ -4,7 +4,7 @@
     "e2e": "cypress open",
     "lint": "eslint src/**/*.js test/**/*.js cypress/integration/**/*.js",
     "unit": "jest test/**/*.test.js",
-    "test": "start-server-and-test start http://localhost:1234"
+    "test": "start-server-and-test start http://localhost:1234 cypress run"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
