@@ -4,7 +4,7 @@
     "e2e": "cypress open",
     "lint": "eslint src/**/*.js test/**/*.js cypress/integration/**/*.js",
     "unit": "jest test/**/*.test.js",
-    "cy": "cypress run",
+    "cy": "cypress run & yarn unit & yarn list",
     "test": "start-server-and-test start http://localhost:1234 cy"
   },
   "devDependencies": {
