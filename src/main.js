@@ -5,6 +5,6 @@ import App from './App.js';
 const root = document.getElementById('root');
 
 ReactDOM.render(
-    <App/>,
-    root,
+  <App/>,
+  root,
 );
