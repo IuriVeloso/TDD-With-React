@@ -17,10 +17,9 @@ jobs:
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
-      - run: npm install --save-dev start-server-and-test
       - save_cache:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - ~/.cache  ## cache both yarn and Cypress!
-      - run: start-server-and-test start http://localhost:1234 cypress run
+      - run: yarn test
       - run: $(yarn bin)/cypress run
