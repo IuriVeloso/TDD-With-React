@@ -22,4 +22,3 @@ jobs:
           paths:
             - ~/.cache  ## cache both yarn and Cypress!
       - run: yarn test
-      - run: $(yarn bin)/cypress run
