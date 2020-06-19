@@ -18,17 +18,14 @@ export class NewRestaurantForm extends Component {
       return (
         <Row>
           <TextInput
-            s={12}
-            m={8}
-            l={10}
+            s={12} m={8} l={10}
             label='Restaurant Name'
             value={this.state.input}
             onChange={this.handleChange}
             data-test="newRestaurantName" />
           <Button
-            s={12}
-            m={4}
-            l={2}
+            s={12} m={4} l={2}
+            ref={(input) => this.nameInput=input}
             className="modal-close"
             type='button'
             data-test="saveNewRestaurantButton"

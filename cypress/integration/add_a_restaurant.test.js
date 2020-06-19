@@ -14,6 +14,8 @@ describe('adding a restaurant', () => {
 
     cy.get('[data-test="addRestaurantButton"]').click();
 
+    // cy.focused().should('have.attr', 'data-test', 'newRestaurantName');
+
     cy.get('[data-test="newRestaurantName"]').type(restaurantName);
 
     cy.get('[data-test="saveNewRestaurantButton"]').click();
