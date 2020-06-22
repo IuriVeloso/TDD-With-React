@@ -5,17 +5,26 @@ import "../../node_modules/materialize-css/dist/js/materialize.min.js";
 
 describe("NewRestaurantForm", () => {
   describe('clicking the save button', () => {
-    it('calls the onSave handler', () => {
-      const saveHandler = jest.fn();
-      const wrapper = mount(<NewRestaurantForm onSave={saveHandler}/>);
+    let saveHandler;
+    let wrapper;
+
+    beforeEach(() => {
+      saveHandler = jest.fn();
+      wrapper = mount(<NewRestaurantForm onSave={saveHandler}/>);
 
       wrapper.find('input[data-test="newRestaurantName"]')
         .simulate('change', { target: { value: 'Sushi Place' } });
 
       wrapper.find('button[data-test="saveNewRestaurantButton"]')
         .simulate('click');
+    });
 
+    it('calls the onSave handler', () => {
       expect(saveHandler).toHaveBeenCalledWith('Sushi Place');
+    });
+
+    it('clears the input', () => {
+      expect(wrapper.find('input[data-test="newRestaurantName"]').props().value).toEqual('');
     });
   });
 });
