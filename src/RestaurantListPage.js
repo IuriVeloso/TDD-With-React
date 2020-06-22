@@ -4,31 +4,18 @@ import NewRestaurantForm from './NewRestaurantForm';
 import RestaurantList from './RestaurantList';
 
 export default class RestaurantListPage extends Component {
-  state = { restaurantNames: [],
-    showNewRestaurantForm: false }
+  state = { restaurantNames: [] }
 
     handleAddRestaurant = (newRestaurant) => {
       this.setState(state => ({
-        showNewRestaurantForm: false,
         restaurantNames: [
           newRestaurant,
           ...state.restaurantNames,
         ],
       }));
-    }
-
-    handleShowNewRestaurant = () => {
-      this.setState({ showNewRestaurantForm: true });
-    }
-
-    renderNewRestauranteForm = () => {
-      if (this.state.showNewRestaurantForm) {
-        return (
-          <NewRestaurantForm
-            onSave={this.handleAddRestaurant}
-          />
-        );
-      }
+      console.log('oi');
+      // eslint-disable-next-line no-undef
+      $('#addFormsModal').modal('close');
     }
 
     render() {
@@ -39,6 +26,8 @@ export default class RestaurantListPage extends Component {
             header='New Restaurant'
             id="addFormsModal"
             data-test="addRestaurantModal"
+            open={false}
+            options={{ dismissible: true }}
             trigger={
               <Button
                 data-test="addRestaurantButton"
@@ -55,7 +44,6 @@ export default class RestaurantListPage extends Component {
           <Row>
             <RestaurantList restaurants={restaurantNames}/>
           </Row>
-        </div>
-      );
+        </div>);
     }
 }
