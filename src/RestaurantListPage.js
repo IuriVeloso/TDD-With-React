@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { Button, Modal, Row } from "react-materialize";
 import NewRestaurantForm from './NewRestaurantForm';
@@ -13,8 +14,10 @@ export default class RestaurantListPage extends Component {
           ...state.restaurantNames,
         ],
       }));
-      console.log('oi');
-      // eslint-disable-next-line no-undef
+      $('#addFormsModal').modal('close');
+    }
+
+    handleCancelRestaurant = () => {
       $('#addFormsModal').modal('close');
     }
 
@@ -25,12 +28,13 @@ export default class RestaurantListPage extends Component {
           <Modal
             header='New Restaurant'
             id="addFormsModal"
-            data-test="addRestaurantModal"
+            data-testid="addRestaurantModal"
             open={false}
             options={{ dismissible: true }}
+            actions={<></>}
             trigger={
               <Button
-                data-test="addRestaurantButton"
+                data-testid="addRestaurantButton"
                 type='button'
                 onClick={this.handleShowNewRestaurant}>
                             Add Restaurant
@@ -39,6 +43,7 @@ export default class RestaurantListPage extends Component {
           >
             <NewRestaurantForm
               onSave={this.handleAddRestaurant}
+              onCancel={this.handleCancelRestaurant}
             />
           </Modal>
           <Row>
