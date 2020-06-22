@@ -4,7 +4,7 @@ describe('adding a restaurant', () => {
 
     cy.visit('http://localhost:1234');
 
-    modalIsVisible();
+    modalIsNotVisible();
     modalOpenClose();
     modalDisplayErrors();
     modalClearsErrorsOnClose();
@@ -15,7 +15,7 @@ describe('adding a restaurant', () => {
     cy.get('input[data-testid="newRestaurantName"]').should('not.is.visible');
   });
 
-  function modalIsVisible() {
+  function modalIsNotVisible() {
     cy.get('input[data-testid="newRestaurantName"]').should('not.is.visible');
   }
 
