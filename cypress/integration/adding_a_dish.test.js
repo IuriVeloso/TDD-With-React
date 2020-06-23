@@ -9,7 +9,7 @@ describe('adding a list', () => {
     modalIsNotVisible();
     goToRestaurantPage(restaurantName);
     modalAllowAddingDishes(dishName);
-    // dishesRetainedWhenLeavingPage(restaurantName, dishName);
+    dishesRetainedWhenLeavingPage(restaurantName, dishName);
   });
 
   function modalSaveTheInput(restaurantName) {
