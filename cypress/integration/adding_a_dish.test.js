@@ -3,16 +3,20 @@ describe('adding a list', () => {
     const restaurantName = 'Sushi bar';
     const dishName = 'Temaki';
 
+    const restaurantName2= 'Burguer Place';
+    const dishName2 = 'Big Place Burguer';
+
     cy.visit('http://localhost:1234');
 
-    modalSaveTheInput(restaurantName);
+    modalSaveTheRestaurant(restaurantName);
     modalIsNotVisible();
     goToRestaurantPage(restaurantName);
     modalAllowAddingDishes(dishName);
     dishesRetainedWhenLeavingPage(restaurantName, dishName);
+    dishesStorePerRestaurante(restaurantName2, dishName, dishName2);
   });
 
-  function modalSaveTheInput(restaurantName) {
+  function modalSaveTheRestaurant(restaurantName) {
     cy.get('[data-testid="addRestaurantButton"]').click();
 
     cy.get('[data-testid="newRestaurantName"]').type(restaurantName);
@@ -46,5 +50,19 @@ describe('adding a list', () => {
     cy.get('[data-testid=backButton]').click();
     cy.contains(restaurantName).click();
     cy.contains(dishName);
+    cy.get('[data-testid=backButton]').click();
+  }
+
+  function dishesStorePerRestaurante(restaurantName, absentDishName, dishName) {
+    cy.get('[data-testid="addRestaurantButton"]').click();
+    cy.get('[data-testid="newRestaurantName"]').type(restaurantName);
+    cy.get('[data-testid="saveNewRestaurantButton"]').click();
+    cy.contains(restaurantName).click();
+    cy.contains(absentDishName).should('not.exist');
+    cy.get('[data-testid="addDishButton"]').click();
+    cy.get('[data-testid="newDishName"]').type(dishName);
+    cy.get('[data-testid="saveNewDishButton"]').click();
+    cy.contains(dishName);
+    cy.get('[data-testid=backButton]').click();
   }
 });

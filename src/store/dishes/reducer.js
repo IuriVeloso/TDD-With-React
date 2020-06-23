@@ -1,9 +1,14 @@
-const initialState = [];
+const initialState = {};
 
-const dishes = (state = initialState, { type, name }) => {
-  switch (type) {
+const dishes = (state = initialState, action) => {
+  switch (action.type) {
   case 'dishes/ADD_DISH':
-    return [...state, name];
+    const { restaurantName, dishName } = action;
+    return { ...state,
+      [restaurantName]: [
+        dishName,
+        ...(state[restaurantName]||[]),
+      ] };
   default:
     return state;
   }

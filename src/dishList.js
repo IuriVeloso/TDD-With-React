@@ -19,9 +19,10 @@ const DishItems = ({ dishNames }) => (
   dishNames.length === 0 ? <EmptyDishItens/> : <SomeDishItems dish={dishNames}/>
 );
 
-function DishList({ dishNames }) {
+function DishList({ restaurantName, dishNames }) {
   return (
-    <Collection header="Dishes">
+    <Collection header={restaurantName}>
+      {console.log(restaurantName)}
       <DishItems dishNames={dishNames}/>
     </Collection>
   );

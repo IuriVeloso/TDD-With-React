@@ -14,12 +14,17 @@ class RestaurantDetailsPage extends Component {
     }
 
     handleAddDish = (dishName) => {
-      this.props.addDish(dishName);
+      const restaurantName = this.props.match.params.name;
+
+      this.props.addDish({ restaurantName, dishName });
       $('#addDishModal').modal('close');
     }
 
     render() {
       const { dishes } = this.props;
+      const restaurantName = this.props.match.params.name;
+      const restaurantDishes = dishes[restaurantName] || [];
+
       return (
         <div>
           <Link data-testid='backButton' to='/'>
@@ -37,7 +42,10 @@ class RestaurantDetailsPage extends Component {
             <NewDishForm onSave={this.handleAddDish}/>
           </Modal>
           <Row>
-            <DishList dishNames={dishes}/>
+            <DishList
+              restaurantName={restaurantName}
+              dishNames={restaurantDishes}
+            />
           </Row>
         </div>
       );
