@@ -1,27 +1,25 @@
 /* eslint-disable no-undef */
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import { Button, Modal, Row } from "react-materialize";
 import NewDishForm from './newDishForm';
 import DishList from "./dishList.js";
 
-export default class RestaurantDetailsPage extends Component {
+import { addDish } from './store/dishes/actions';
+
+class RestaurantDetailsPage extends Component {
     state= {
-      dishNames: [],
+      dishes: [],
     }
 
     handleAddDish = (dishName) => {
-      this.setState(state => ({
-        dishNames: [
-          dishName,
-          ...state.dishNames,
-        ],
-      }));
+      this.props.addDish(dishName);
       $('#addDishModal').modal('close');
     }
 
     render() {
-      const { dishNames } = this.state;
+      const { dishes } = this.props;
       return (
         <div>
           <Link data-testid='backButton' to='/'>
@@ -39,9 +37,19 @@ export default class RestaurantDetailsPage extends Component {
             <NewDishForm onSave={this.handleAddDish}/>
           </Modal>
           <Row>
-            <DishList dishNames={dishNames}/>
+            <DishList dishNames={dishes}/>
           </Row>
         </div>
       );
     }
 }
+
+const mapStateToProps = (state) => ({
+  dishes: state.dishes,
+});
+
+const mapDispatchToProps = {
+  addDish,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantDetailsPage);
