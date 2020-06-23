@@ -1,4 +1,4 @@
-describe.skip('adding a list', () => {
+describe('adding a list', () => {
   it('displays the dishes in the list', () => {
     const restaurantName = 'Sushi bar';
     const dishName = 'Temaki';
