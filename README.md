@@ -16,6 +16,8 @@ Repository of the code made in CodingItWrongLive about TDD and it application wi
 * Cypress
 * Jest
 * Enzyme
+* React Testing Library
+* Redux
 
 ## :rocket: How to use it?
 
