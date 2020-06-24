@@ -5,10 +5,14 @@ import { Button, Modal, Row } from "react-materialize";
 import NewRestaurantForm from './NewRestaurantForm';
 import RestaurantList from './RestaurantList';
 
-import { addRestaurant } from './store/restaurant/actions';
+import { addRestaurant, loadRestaurants } from './store/restaurant/actions';
 
 class RestaurantListPage extends Component {
   state = { restaurantNames: [] }
+
+  componentDidMount() {
+    this.props.loadRestaurants();
+  }
 
     handleAddRestaurant = (newRestaurant) => {
       this.props.addRestaurant(newRestaurant);
@@ -53,6 +57,6 @@ class RestaurantListPage extends Component {
 
 const mapStateToProps = (state) => ({ restaurants: state.restaurants });
 
-const mapDispatchToProps = { addRestaurant };
+const mapDispatchToProps = { addRestaurant, loadRestaurants };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RestaurantListPage);

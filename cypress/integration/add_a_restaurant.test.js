@@ -1,9 +1,14 @@
 describe('adding a restaurant', () => {
   it('displays the restaurant list', () => {
+    const initialRestaurantName = 'Spaghetti Place';
+
+    setUpInitialRestaurant(initialRestaurantName);
+
     // enter the page
 
     cy.visit('http://localhost:1234');
 
+    restaurantsFromServerDisplayedAtStart(initialRestaurantName);
     modalIsNotVisible();
     modalOpenClose();
     modalDisplayErrors();
@@ -14,6 +19,29 @@ describe('adding a restaurant', () => {
 
     cy.get('input[data-testid="newRestaurantName"]').should('not.is.visible');
   });
+
+  function setUpInitialRestaurant(initialRestaurantName) {
+    cy.server();
+    cy.route({
+      method: 'GET',
+      url: '/restaurants',
+      response: {
+        data: [
+          {
+            type: 'restaurants',
+            id: '1',
+            attributes: {
+              name: initialRestaurantName,
+            },
+          },
+        ],
+      },
+    });
+  }
+
+  function restaurantsFromServerDisplayedAtStart(restaurantName) {
+    cy.contains(restaurantName);
+  }
 
   function modalIsNotVisible() {
     cy.get('input[data-testid="newRestaurantName"]').should('not.is.visible');

@@ -6,8 +6,8 @@ export const STORE_RESTAURANTS = 'restaurants/STORE_RESTAURANTS';
 export const loadRestaurants = () => (dispatch) => {
   return api.get('/restaurants')
     .then(response => {
-      const responseBody = response.data;
-      const restaurants = responseBody.data;
+      const restaurants = response.data;
+      console.log(restaurants);
       dispatch({
         type: STORE_RESTAURANTS,
         restaurants,

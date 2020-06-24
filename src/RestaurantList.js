@@ -9,9 +9,9 @@ const EmptyRestaurantItens = () => (
 );
 
 const SomeRestaurantItems = ({ restaurants }) => (
-  restaurants.map(restaurantName => (
-    <CollectionItem key={restaurantName}>
-      <Link to={`/restaurants/${restaurantName}`} >{restaurantName}</Link>
+  restaurants.map(restaurant => (
+    <CollectionItem key={restaurant.id}>
+      <Link to={`/restaurants/${restaurant.attributes.name}`} >{restaurant.attributes.name}</Link>
     </CollectionItem>
   ))
 );

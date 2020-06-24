@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, wait, fireEvent, cleanup } from 'react-testing-library';
+import { render, wait, fireEvent, cleanup, act } from 'react-testing-library';
 
 import NewRestaurantForm from '../../src/NewRestaurantForm.js';
 import "../../node_modules/materialize-css/dist/js/materialize.min.js";

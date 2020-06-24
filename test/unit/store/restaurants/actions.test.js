@@ -5,27 +5,27 @@ jest.mock('../../../../src/store/api');
 describe('restaurant actions', () => {
   describe('loadRestaurants', () => {
     it('store restaurants retrieved from the api', () => {
+      const restaurants = [
+        {
+          type: 'restaurants',
+          id: '1',
+          attributes: {
+            name: 'Sushi Place',
+          },
+        }, {
+          type: 'restaurants',
+          id: '2',
+          attributes: {
+            name: 'Burguer Place',
+          },
+        },
+      ];
+
       const dispatch = jest.fn();
 
       api.get.mockResolvedValue({
-        data: {
-          data: restaurants,
-        },
+        data: restaurants,
       });
-
-      const restaurants = [{
-        type: 'restaurants',
-        id: '1',
-        attributes: {
-          name: 'Sushi Place',
-        },
-      }, {
-        type: 'restaurants',
-        id: '1',
-        attributes: {
-          name: 'Burguer Place',
-        },
-      }];
 
       return loadRestaurants()(dispatch)
         .then(() => {
