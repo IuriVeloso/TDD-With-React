@@ -2,10 +2,10 @@ import { FloatingActionButton } from "materialize-css";
 
 const initialState = [];
 
-const restaurants = (state = initialState, { type, name, restaurants }) => {
+const restaurants = (state = initialState, { type, restaurants, restaurant }) => {
   switch (type) {
   case 'restaurants/ADD_RESTAURANTS':
-    return [...state, name];
+    return [restaurant, ...state];
   case 'restaurants/STORE_RESTAURANTS':
     return restaurants;
   default:

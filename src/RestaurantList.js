@@ -21,6 +21,7 @@ const RestaurantItems = ({ restaurantItens }) => (
 );
 
 export default function RestaurantList({ restaurants }) {
+  console.log(restaurants);
   return (
     <Collection header="Restaurants">
       <RestaurantItems restaurantItens={restaurants}/>

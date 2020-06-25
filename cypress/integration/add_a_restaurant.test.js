@@ -25,17 +25,15 @@ describe('adding a restaurant', () => {
     cy.route({
       method: 'GET',
       url: '/restaurants',
-      response: {
-        data: [
-          {
-            type: 'restaurants',
-            id: '1',
-            attributes: {
-              name: initialRestaurantName,
-            },
+      response: [
+        {
+          type: 'restaurants',
+          id: '1',
+          attributes: {
+            name: initialRestaurantName,
           },
-        ],
-      },
+        },
+      ],
     });
   }
 
