@@ -1,5 +1,4 @@
 import api from '../api';
-import restaurants from './reducer';
 
 export const ADD_RESTAURANT = 'restaurants/ADD_RESTAURANTS';
 export const STORE_RESTAURANTS = 'restaurants/STORE_RESTAURANTS';
