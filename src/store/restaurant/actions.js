@@ -15,17 +15,19 @@ export const loadRestaurants = () => (dispatch) => {
     });
 };
 
-export const addRestaurant = (name) => {
+export const addRestaurant = (name) => (dispatch) => {
   const restaurant = {
     type: 'restaurants',
-    id: Math.floor(Math.random() * 100),
+    id: 26,
     attributes: {
       name,
     },
-  };
-  console.log(restaurant);
-  return {
+  } ;
+
+  dispatch({
     type: ADD_RESTAURANT,
     restaurant,
-  };
+  });
+
+  return api.post('/restaurants', restaurant);
 };

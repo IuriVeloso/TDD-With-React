@@ -1,5 +1,13 @@
-import { STORE_RESTAURANTS, loadRestaurants } from '../../../../src/store/restaurant/actions';
+import {
+  STORE_RESTAURANTS,
+  ADD_RESTAURANT,
+  addRestaurant,
+  loadRestaurants,
+} from '../../../../src/store/restaurant/actions';
+
 import api from '../../../../src/store/api';
+import restaurants from '../../../../src/store/restaurant/reducer';
+
 jest.mock('../../../../src/store/api');
 
 describe('restaurant actions', () => {
@@ -34,6 +42,33 @@ describe('restaurant actions', () => {
             restaurants,
           });
         });
+    });
+  });
+
+  describe('addRestaurants', () => {
+    let dispatch;
+    const name = 'Sushi Place';
+
+    const restaurant = {
+      type: 'restaurants',
+      id: 26,
+      attributes: {
+        name,
+      },
+    };
+    beforeEach(() => {
+      dispatch = jest.fn();
+
+      return addRestaurant(name)(dispatch);
+    });
+    it('sends the new restaurant to the server', () => {
+      expect(api.post).toHaveBeenCalledWith('/restaurants', restaurant);
+    });
+    it('inserts the new restaurant in the state', () => {
+      expect(dispatch).toHaveBeenCalledWith({
+        type: ADD_RESTAURANT,
+        restaurant,
+      });
     });
   });
 });
