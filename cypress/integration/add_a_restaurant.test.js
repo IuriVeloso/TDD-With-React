@@ -1,8 +1,9 @@
 describe('adding a restaurant', () => {
   it('displays the restaurant list', () => {
     const initialRestaurantName = 'Spaghetti Place';
+    const addRestaurantName = 'Sushi Bar';
 
-    setUpInitialRestaurant(initialRestaurantName);
+    setUpInitialRestaurant(initialRestaurantName, addRestaurantName);
 
     // enter the page
 
@@ -20,7 +21,7 @@ describe('adding a restaurant', () => {
     cy.get('input[data-testid="newRestaurantName"]').should('not.is.visible');
   });
 
-  function setUpInitialRestaurant(initialRestaurantName) {
+  function setUpInitialRestaurant(initialRestaurantName, addRestaurantName) {
     cy.server();
     cy.route({
       method: 'GET',
@@ -34,6 +35,18 @@ describe('adding a restaurant', () => {
           },
         },
       ],
+    });
+
+    cy.route({
+      method: 'POST',
+      url: '/restaurants',
+      response: {
+        type: 'restaurants',
+        id: 26,
+        attributes: {
+          name: addRestaurantName,
+        },
+      },
     });
   }
 
