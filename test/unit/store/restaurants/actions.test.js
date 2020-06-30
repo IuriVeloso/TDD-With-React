@@ -3,12 +3,12 @@ import {
   ADD_RESTAURANT,
   addRestaurant,
   loadRestaurants,
-} from '../../../../src/store/restaurant/actions';
+} from 'store/restaurant/actions';
 
-import api from '../../../../src/store/api';
-import restaurants from '../../../../src/store/restaurant/reducer';
+import api from 'store/api';
+import restaurants from 'store/restaurant/reducer';
 
-jest.mock('../../../../src/store/api');
+jest.mock('store/api');
 
 describe('restaurant actions', () => {
   describe('loadRestaurants', () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, wait, fireEvent, cleanup, act } from 'react-testing-library';
 
-import NewRestaurantForm from '../../src/NewRestaurantForm.js';
-import "../../node_modules/materialize-css/dist/js/materialize.min.js";
+import NewRestaurantForm from 'NewRestaurantForm.js';
+import "materialize-css/dist/js/materialize.min.js";
 
 describe('NewRestaurantForm', () => {
   describe('clicking the save button', () => {

@@ -1,5 +1,5 @@
-import dishes from '../../../src/store/dishes/reducer';
-import { ADD_DISH } from '../../../src/store/dishes/actions';
+import dishes from 'store/dishes/reducer';
+import { ADD_DISH } from 'store/dishes/actions';
 
 describe('dishes reducer', () => {
   describe('dishes/ADD_DISH', () => {

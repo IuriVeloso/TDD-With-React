@@ -46,6 +46,7 @@
     "redux-thunk": "^2.3.0"
   },
   "jest": {
+    "moduleDirectories": ["node_modules", "src"],
     "setupFilesAfterEnv": [
       "<rootDir>test/setup.js"
     ]
