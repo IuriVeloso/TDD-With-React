@@ -12,6 +12,7 @@
     "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-react": "^7.10.1",
+    "@cypress/code-coverage": "^3.8.1",
     "@cypress/webpack-preprocessor": "^5.4.1",
     "@testing-library/react": "^10.3.0",
     "babel-core": "^7.0.0-0",
