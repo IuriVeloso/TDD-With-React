@@ -6,7 +6,7 @@ describe('adding a list', () => {
     const restaurantName2= 'Burguer Place';
     const dishName2 = 'Big Place Burguer';
 
-    cy.visit('http://localhost:1234');
+    cy.visit('/');
 
     modalSaveTheRestaurant(restaurantName);
     modalIsNotVisible();
