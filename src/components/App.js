@@ -6,9 +6,9 @@ import {
 import { Provider } from "react-redux";
 import { Col, Row } from "react-materialize";
 
-import store from "./store/index";
-import RestaurantListPage from './RestaurantListPage';
-import RestaurantDetailsPage from './RestaurantDetailsPage';
+import store from "../store/index";
+import RestaurantListPage from './RestaurantListPage/index';
+import RestaurantDetailsPage from './RestaurantDetails/index';
 
 export default class App extends Component {
   render() {

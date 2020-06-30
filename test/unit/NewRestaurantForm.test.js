@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, wait, fireEvent, cleanup, act } from 'react-testing-library';
 
-import NewRestaurantForm from 'NewRestaurantForm.js';
+import NewRestaurantForm from 'components/RestaurantListPage/NewRestaurantForm';
 import "materialize-css/dist/js/materialize.min.js";
 
 describe('NewRestaurantForm', () => {
