@@ -41,10 +41,17 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "src": "^1.1.2"
   },
   "jest": {
-    "moduleDirectories": ["node_modules", "src"]
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
+  },
+  "alias": {
+    "src": "./src"
   },
   "name": "tdd-live",
   "version": "1.0.0",

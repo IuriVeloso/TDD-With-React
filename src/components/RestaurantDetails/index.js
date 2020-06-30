@@ -6,7 +6,7 @@ import { Button, Modal, Row } from "react-materialize";
 import NewDishForm from './newDishForm';
 import DishList from "./dishList.js";
 
-import { addDish } from '../../store/dishes/actions';
+import { addDish } from 'src/store/dishes/actions';
 
 class RestaurantDetailsPage extends Component {
     state= {

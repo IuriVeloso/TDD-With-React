@@ -5,7 +5,7 @@ import { Button, Modal, Row } from "react-materialize";
 import NewRestaurantForm from './NewRestaurantForm';
 import RestaurantList from './RestaurantList';
 
-import { addRestaurant, loadRestaurants } from '../../store/restaurant/actions';
+import { addRestaurant, loadRestaurants } from 'src/store/restaurant/actions';
 
 class RestaurantListPage extends Component {
   state = { restaurantNames: [] }
