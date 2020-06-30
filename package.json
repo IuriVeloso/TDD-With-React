@@ -3,7 +3,7 @@
     "start": "parcel index.html",
     "e2e": "cypress open",
     "lint": "eslint src/**/*.js test/**/*.js cypress/integration/**/*.js",
-    "unit": "jest test/",
+    "unit": "jest test/unit",
     "cy": "yarn unit & yarn lint & cypress run",
     "test": "start-server-and-test start http://localhost:1234 cy"
   },
